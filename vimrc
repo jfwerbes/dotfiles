@@ -14,19 +14,15 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'fatih/vim-go.git'
-Plugin 'Shuogo/neocomplete.vim.git'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,8 +42,12 @@ syntax enable
 filetype plugin on
 set nonumber
 let g:go_disable_autoinstall = 0
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = '/Users/Admin/go/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 set wildmenu
 set wildmode=longest,list,full
+set encoding=utf-8
 
 set backspace=indent,eol,start
 " Highlight
@@ -86,4 +86,5 @@ let g:tagbar_type_go = {
 \ }
 nmap <F8> :TagbarToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <C-x> :Files<CR>
 colorscheme molokai
