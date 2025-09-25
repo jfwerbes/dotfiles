@@ -114,12 +114,12 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
   If you’d like to install themes, you can clone them from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes):
 
   ```sh
-  git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty-themes
+  git clone https://github.com/dexpota/kitty-themes.git PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes
   ```
 
   > 💡 **Recommendation**: Remove the `.git` folder from the cloned `kitty-themes` repo:  
   > ```sh
-  > rm -rf ~/.config/kitty-themes/.git
+  > rm -rf PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes/.git
   > ```  
   > This avoids dealing with **nested Git repositories** inside your own dotfiles repo.
 
