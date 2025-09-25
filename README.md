@@ -142,8 +142,8 @@ stow hyprland
 # … etc.
 
 # (Optional) install kitty themes
-git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty-themes
-rm -rf ~/.config/kitty-themes/.git
+git clone https://github.com/dexpota/kitty-themes.git PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes
+rm -rf PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes/.git
 ```
 
 If you encounter file conflicts, stow will warn you; you can fix or remove existing conflicting files, then retry.
