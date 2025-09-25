@@ -103,6 +103,8 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 - You can combine multiple stow packages flexibly (for instance, if you want `nvim` and `zshrc`).
 - If you ever want to migrate or reorganize a package, just update the folder structure; stow’s behavior remains consistent.
 - The dotfiles are tracked via Git, so you can version your configuration changes, sync across machines, or roll back.
+- ⚠️ **Disclaimer**: Kitty themes are intentionally not included in this repository.  
+  If you’d like to install themes, you can clone them from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes).
 
 ---
 
