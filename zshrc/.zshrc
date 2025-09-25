@@ -8,14 +8,14 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Start ssh-agent and add key
+# Start ssh-agent and add key, silence add output
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
-ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 # history setup for autocompletion
 setopt APPEND_HISTORY
