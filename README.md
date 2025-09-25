@@ -64,6 +64,13 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
    cd ~/.dotfiles
    ```
 
+   > 💡 **Recommendation**: Remove the `.git` folder if you want to version-control your dotfiles yourself.  
+   > This avoids being tied to my repository history:  
+   > ```sh
+   > rm -rf ~/.dotfiles/.git
+   > git init ~/.dotfiles
+   > ```
+
 2. Use stow to symlink one or more packages. For example:
 
    ```sh
@@ -104,7 +111,17 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 - If you ever want to migrate or reorganize a package, just update the folder structure; stow’s behavior remains consistent.
 - The dotfiles are tracked via Git, so you can version your configuration changes, sync across machines, or roll back.
 - ⚠️ **Disclaimer**: Kitty themes are intentionally not included in this repository.  
-  If you’d like to install themes, you can clone them from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes).
+  If you’d like to install themes, you can clone them from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes):
+
+  ```sh
+  git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty-themes
+  ```
+
+  > 💡 **Recommendation**: Remove the `.git` folder from the cloned `kitty-themes` repo:  
+  > ```sh
+  > rm -rf ~/.config/kitty-themes/.git
+  > ```  
+  > This avoids dealing with **nested Git repositories** inside your own dotfiles repo.
 
 ---
 
@@ -116,11 +133,17 @@ sudo pacman -S stow git
 
 git clone https://github.com/jfwerbes/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+rm -rf .git && git init   # optional: reset Git history for personal use
+
 stow nvim
 stow kitty
 stow zshrc
 stow hyprland
 # … etc.
+
+# (Optional) install kitty themes
+git clone https://github.com/dexpota/kitty-themes.git ~/.config/kitty-themes
+rm -rf ~/.config/kitty-themes/.git
 ```
 
 If you encounter file conflicts, stow will warn you; you can fix or remove existing conflicting files, then retry.
