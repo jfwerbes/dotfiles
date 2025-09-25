@@ -25,8 +25,9 @@ SAVEHIST=1000
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-# Start starship
+# Start starship and zoxide, macro cd to zoxide
 eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 alias hc='vim ~/.config/hypr/hyprland.conf'
 alias vim='nvim'
