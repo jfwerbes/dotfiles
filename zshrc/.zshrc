@@ -9,7 +9,7 @@ compinit
 # End of lines added by compinstall
 
 # Start ssh-agent and add key, silence add output
-# ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+ ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 # history setup for autocompletion
 setopt APPEND_HISTORY
@@ -24,9 +24,6 @@ setopt EXTENDED_HISTORY
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-alias hc='vim ~/.config/hypr/hyprland.conf'
-alias vim='nvim'
-
 # fix ctrl jump for words
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
@@ -34,3 +31,8 @@ bindkey '^[[1;5C' forward-word
 # autocompletion using arrow keys (based on history)
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
+
+# Aliases
+alias hc='vim ~/.config/hypr/hyprland.conf'
+alias vim='nvim'
+
