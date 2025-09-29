@@ -9,7 +9,7 @@ compinit
 # End of lines added by compinstall
 
 # Start ssh-agent and add key, silence add output
-ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+# ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
 # history setup for autocompletion
 setopt APPEND_HISTORY
