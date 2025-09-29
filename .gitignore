@@ -1,2 +1,3 @@
 # ignore themes
 kitty/.config/kitty/kitty-themes/themes
+sddm-themes/*
