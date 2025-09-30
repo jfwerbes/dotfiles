@@ -36,4 +36,5 @@ bindkey '\e[B' history-search-forward
 alias hc='vim ~/.config/hypr/hyprland.conf'
 alias vim='nvim'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
+alias spotify='spotify_player'
 
