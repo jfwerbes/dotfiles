@@ -35,4 +35,5 @@ bindkey '\e[B' history-search-forward
 # Aliases
 alias hc='vim ~/.config/hypr/hyprland.conf'
 alias vim='nvim'
+alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 
