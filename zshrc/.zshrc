@@ -38,3 +38,5 @@ alias vim='nvim'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias spotify='spotify_player'
 
+# Plugins
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
