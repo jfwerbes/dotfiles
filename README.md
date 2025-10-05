@@ -13,36 +13,36 @@ Here’s the high-level layout of the repository:
 ```
 .
 ├── backgrounds/
-│   └── .config/
+│   └── dot-config/
 │       └── backgrounds/
 ├── dunst/
-│   └── .config/
+│   └── dot-config/
 │       └── dunst/
 ├── hyprland/
-│   └── .config/
+│   └── dot-config/
 │       └── hypr/
 ├── hyprpaper/
-│   └── .config/
+│   └── dot-config/
 │       └── hypr/
 ├── kitty/
-│   └── .config/
+│   └── dot-config/
 │       └── kitty/
 ├── nvim/
-│   └── .config/
+│   └── dot-config/
 │       └── nvim/
 ├── starship/
-│   └── .config/
+│   └── dot-config/
 ├── waybar/
-│   └── .config/
+│   └── dot-config/
 │       └── waybar/
 ├── wofi/
-│   └── .config/
+│   └── dot-config/
 │       └── wofi/
 ├── zshrc
 └── .gitignore
 ```
 
-Each top-level folder (e.g. `nvim`, `kitty`, `hyprland`, etc.) corresponds to one “package” in stow parlance. Inside, the path structure mirrors where those config files should land in your home directory (or appropriate config directory).
+Each top-level folder (e.g. `nvim`, `kitty`, `hyprland`, etc.) corresponds to one “package” in stow parlance. Inside, the path structure mirrors where those config files should land in your home directory (or appropriate config directory). GNU stow interprets the prefix "dot-" as a prepended . in the file path allowing for traversal without having to comb hidden directories. In order to store these properly though, the --dotfiles flag must be passed to stow.
 
 ---
 
@@ -74,12 +74,12 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 2. Use stow to symlink one or more packages. For example:
 
    ```sh
-   stow nvim
-   stow kitty
-   stow zshrc
+   stow --dotfiles nvim
+   stow --dotfiles kitty
+   stow --dotfiles zshrc
    ```
 
-   This will create symlinks from `~/.dotfiles/nvim/.config/nvim` → `~/.config/nvim` (and similarly for other packages).  
+   This will create symlinks from `~/.dotfiles/nvim/dot-config/nvim` → `~/.config/nvim` (and similarly for other packages).  
    If you want to stow into other directories (not in your home dir), use the `-t` / `--target` flag:
 
    ```sh
@@ -98,7 +98,7 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 4. (Optional) You can stow multiple at once:
 
    ```sh
-   stow nvim kitty starship
+   stow --dotfiles nvim kitty starship
    ```
 
 ---
