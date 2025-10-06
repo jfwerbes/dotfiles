@@ -7,8 +7,8 @@ set -euo pipefail
 sleep 5
 
 # Define daytime and nighttime images
-typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/.config/backgrounds/brutus.jpg"
-typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/.config/backgrounds/night.jpg"
+typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/brutus.jpg"
+typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
 
 # Current hour (00–23) as an integer
 typeset -i PRESENT_TIME
