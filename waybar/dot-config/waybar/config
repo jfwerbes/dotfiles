@@ -21,7 +21,7 @@
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
-		"pulseaudio",
+		"wireplumber",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
@@ -78,7 +78,7 @@
 		"tooltip": false
 	},
 
-	"pulseaudio": {
+	"wireplumber": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
 		"format-muted": "MUTE",
@@ -90,7 +90,6 @@
 			]
 		},
 		"scroll-step": 5,
-		"on-click": "pamixer -t",
 		"on-click-right": "pavucontrol"
 	},
 	"memory": {
