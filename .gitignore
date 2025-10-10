@@ -1,3 +1,6 @@
 # ignore themes
 kitty/.config/kitty/kitty-themes/themes
 sddm-themes/*
+
+# ignore lazy-lock
+*lazy-lock.json
