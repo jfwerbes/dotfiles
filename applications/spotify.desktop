@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Spotify
+Comment=Terminal-based Spotify client
+Exec=/usr/bin/kitty -e /usr/bin/zsh -ic 'spotify_player'
+Icon=spotify
+Terminal=false
+Type=Application
+Categories=Music;Player;
+StartupNotify=false
