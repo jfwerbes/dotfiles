@@ -25,6 +25,21 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
+# --------------FZF--------------
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden -- strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
 # fix ctrl jump for words
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
@@ -39,6 +54,9 @@ alias vim='nvim'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias spotify='spotify_player'
 alias cat='bat'
+alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+
+source ~/fzf-git.sh/fzf-git.sh
 
 # Plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
