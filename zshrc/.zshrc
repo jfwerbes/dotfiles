@@ -20,9 +20,10 @@ SAVEHIST=1000
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-# Start starship and zoxide, macro cd to zoxide
+# Start starship and zoxide, macro cd to zoxide, start fzf
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(fzf --zsh)"
 
 # fix ctrl jump for words
 bindkey '^[[1;5D' backward-word
