@@ -55,6 +55,7 @@ alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias spotify='spotify_player'
 alias cat='bat'
 alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias screenrecord='wf-recorder -g "$(slurp)" -f captures/videos/behaviour.mp4'
 
 source ~/fzf-git.sh/fzf-git.sh
 
