@@ -1,6 +1,7 @@
 # ignore themes
-kitty/.config/kitty/kitty-themes/themes
+kitty/dot-config/kitty/kitty-themes/themes
 sddm-themes/*
+eza/dot-config/eza
 
 # ignore lazy-lock
 *lazy-lock.json
