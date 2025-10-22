@@ -46,3 +46,8 @@ rewrite = true
 file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
 template = "kitty"
 rewrite = true
+
+[[items]]
+file = "~/.dotfiles/wofi/dot-config/wofi/style.css"
+template = "wofi"
+rewrite = true
