@@ -57,7 +57,7 @@ rewrite = true
 subtemplate = "default"
 
 [[items]]
-file = "~/.dotfiles/starship/dot-config/starship.toml""
+file = "~/.dotfiles/starship/dot-config/starship.toml"
 template = "starship"
 rewrite = true
 subtemplate = "default"
