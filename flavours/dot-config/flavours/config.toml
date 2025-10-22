@@ -35,19 +35,23 @@ shell = "zsh -c '{}'"
 [[items]]
 file = "~/.dotfiles/waybar/dot-config/waybar/style.css"
 template = "waybar"
+rewrite = true
 subtemplate = "default"
 
 [[items]]
 file = "~/.dotfiles/dunst/dot-config/dunst/dunstrc"
 template = "dunst"
 rewrite = true
+subtemplate = "default"
 
 [[items]]
 file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
 template = "kitty"
 rewrite = true
+subtemplate = "default"
 
 [[items]]
 file = "~/.dotfiles/wofi/dot-config/wofi/style.css"
 template = "wofi"
 rewrite = true
+subtemplate = "default"
