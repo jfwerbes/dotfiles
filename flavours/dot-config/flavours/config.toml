@@ -55,3 +55,9 @@ file = "~/.dotfiles/wofi/dot-config/wofi/style.css"
 template = "wofi"
 rewrite = true
 subtemplate = "default"
+
+[[items]]
+file = "~/.dotfiles/starship/dot-config/starship.toml""
+template = "starship"
+rewrite = true
+subtemplate = "default"
