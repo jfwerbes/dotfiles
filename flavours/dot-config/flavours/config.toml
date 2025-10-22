@@ -30,9 +30,6 @@
 # # Whether this hook should be executed when flavours is ran with lightweight flag
 # light = true
 
-
-# Example file. For sway, waybar and (beautiful)discord. Runs hooks through bash:
-
 shell = "zsh -c '{}'"
 #
 [[items]]
@@ -44,12 +41,8 @@ subtemplate = "default"
 file = "~/.dotfiles/dunst/dot-config/dunst/dunstrc"
 template = "dunst"
 rewrite = true
-start = "# Start flavours"
-end = "# End flavours"
 
 [[items]]
 file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
 template = "kitty"
 rewrite = true
-start = "# Start flavours"
-end = "# End flavours"
