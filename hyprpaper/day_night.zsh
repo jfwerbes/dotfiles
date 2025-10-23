@@ -17,8 +17,10 @@ PRESENT_TIME=$(date +%H)
 # Choose wallpaper based on time of day
 typeset WALLPAPER
 if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
+  flavours apply gruvbox-dark-pale
   WALLPAPER="$DAYTIME_WALLPAPER"
 else
+  flavours apply darktooth
   WALLPAPER="$NIGHTTIME_WALLPAPER"
 fi
 
