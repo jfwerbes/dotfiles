@@ -32,7 +32,7 @@ $line_break$character"""
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-color_fg0 = '#9da0a2'
+color_fg0 = '#e3e6ee'
 color_bg1 = '#232530'
 color_bg3 = '#2e303e'
 color_blue = '#6f6f70'
