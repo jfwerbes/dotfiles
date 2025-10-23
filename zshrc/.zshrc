@@ -40,6 +40,8 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
+# --------------FZF--------------
+
 # fix ctrl jump for words
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
