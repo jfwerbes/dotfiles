@@ -32,16 +32,16 @@ $line_break$character"""
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#504945'
-color_blue = '#665c54'
-color_aqua = '#bdae93'
-color_green = '#d5c4a1'
-color_orange = '#ebdbb2'
-color_purple = '#fbf1c7'
-color_red = '#fb4934'
-color_yellow = '#fe8019'
+color_fg0 = '#d5c4a1'
+color_bg1 = '#1d2021'
+color_bg3 = '#3c3836'
+color_blue = '#504945'
+color_aqua = '#665c54'
+color_green = '#bdae93'
+color_orange = '#d5c4a1'
+color_purple = '#ebdbb2'
+color_red = '#fe8019'
+color_yellow = '#3c3836'
 
 [os]
 disabled = false
