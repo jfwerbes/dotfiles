@@ -11,12 +11,12 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #bdae93;
+	color: #665c54;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #1d2021;
-	background: #bdae93;
+	background: #665c54;
 }
 
 #workspaces,
@@ -28,7 +28,7 @@ window#waybar {
 #cpu,
 #disk,
 #tray {
-	background: #bdae93;
+	background: #665c54;
 }
 
 #workspaces button {
@@ -36,7 +36,7 @@ window#waybar {
 	color: #fbf1c7;
 }
 #workspaces button.active {
-	color: #fbf1c7;
+	color: #1d2021;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
@@ -49,16 +49,16 @@ window#waybar {
 }
 
 #wireplumber {
-  color: #fbf1c7;
+  color: #fe8019;
 }
 #memory {
-	color: #fbf1c7;
+	color: #fabd2f;
 }
 #cpu {
-	color: #fbf1c7;
+	color: #b8bb26;
 }
 #disk {
-	color: #fbf1c7;
+	color: #8ec07c;
 }
 
 #clock,
