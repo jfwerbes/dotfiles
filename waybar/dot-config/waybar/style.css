@@ -6,7 +6,7 @@
 window#waybar {
 	background: #262626;
   opacity: 0.9;
-	color: #ff8700;
+	color: #ffaf00;
 }
 
 #custom-right-arrow-dark,
@@ -33,7 +33,7 @@ window#waybar {
 
 #workspaces button {
 	padding: 0 2px;
-	color: #ff8700;
+	color: #ffaf00;
 }
 #workspaces button.active {
 	color: #262626;
