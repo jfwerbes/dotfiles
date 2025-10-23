@@ -6,17 +6,17 @@
 window#waybar {
 	background: #262626;
   opacity: 0.9;
-	color: #ffaf00;
+	color: #d5c4a1;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #d75f5f;
+	color: #4e4e4e;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #262626;
-	background: #d75f5f;
+	background: #4e4e4e;
 }
 
 #workspaces,
@@ -28,7 +28,7 @@ window#waybar {
 #cpu,
 #disk,
 #tray {
-	background: #d75f5f;
+	background: #4e4e4e;
 }
 
 #workspaces button {
@@ -49,7 +49,7 @@ window#waybar {
 }
 
 #wireplumber {
-  color: #ff8700;
+  color: #d5c4a1;
 }
 #memory {
 	color: #ffaf00;
@@ -58,7 +58,7 @@ window#waybar {
 	color: #afaf00;
 }
 #disk {
-	color: #85ad85;
+	color: #ffaf00;
 }
 
 #clock,
