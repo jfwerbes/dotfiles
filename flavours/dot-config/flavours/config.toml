@@ -43,7 +43,7 @@ hook = "killall waybar && waybar &"
 file = "~/.dotfiles/dunst/dot-config/dunst/dunstrc"
 template = "dunst"
 rewrite = true
-subtemplate = "default"
+subtemplate = "killall dunst"
 
 [[items]]
 file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
@@ -60,5 +60,11 @@ subtemplate = "default"
 [[items]]
 file = "~/.dotfiles/starship/dot-config/starship.toml"
 template = "starship"
+rewrite = true
+subtemplate = "default"
+
+[[items]]
+file = "~/.dotfiles/hyprland/dot-config/hypr/hyprland.conf"
+template = "hyprland"
 rewrite = true
 subtemplate = "default"
