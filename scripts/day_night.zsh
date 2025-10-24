@@ -30,6 +30,14 @@ hyprctl hyprpaper preload -- "$WALLPAPER"
 # Give hyprpaper a moment to cache
 sleep 5
 
+# load the wallpapers, sleep, then run if because if flavours is 
+# ran above it will conflict with hyperland instantiating waybar
+if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
+  flavours apply gruvbox-dark-pale
+else
+  flavours apply darktooth
+fi
+
 # Apply the wallpaper to the current display (adjust output name if needed)
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
 
