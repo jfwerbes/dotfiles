@@ -1,0 +1,12 @@
+[Unit]
+Description=Set day/night wallpaper via hyprctl
+# Wait for the graphical session
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+# Run as the logged-in user (this is a user unit, so no User= needed)
+# Ensure we have a shell (if you need zsh features)
+ExecStart=/usr/bin/zsh -lc '/home/brutus/.dotfiles/scripts/day_night.zsh'
+

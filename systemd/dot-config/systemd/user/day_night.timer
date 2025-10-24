@@ -1,0 +1,11 @@
+[Unit]
+Description=Run day_night at 06:00 and 18:00 every day
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
