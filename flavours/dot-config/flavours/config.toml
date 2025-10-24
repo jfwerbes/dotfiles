@@ -43,7 +43,7 @@ hook = "killall waybar && waybar &"
 file = "~/.dotfiles/dunst/dot-config/dunst/dunstrc"
 template = "dunst"
 rewrite = true
-subtemplate = "killall dunst"
+hook = "killall dunst"
 
 [[items]]
 file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
