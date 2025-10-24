@@ -38,6 +38,13 @@ else
   flavours apply darktooth
 fi
 
+# Restart Waybar
+killall waybar
+
+sleep 1
+
+waybar &
+
 # Apply the wallpaper to the current display (adjust output name if needed)
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
 

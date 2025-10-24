@@ -37,7 +37,6 @@ file = "~/.dotfiles/waybar/dot-config/waybar/style.css"
 template = "waybar"
 rewrite = true
 subtemplate = "default"
-hook = "killall waybar && waybar &"
 
 [[items]]
 file = "~/.dotfiles/dunst/dot-config/dunst/dunstrc"
