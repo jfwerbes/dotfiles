@@ -41,7 +41,7 @@ fi
 # Restart Waybar
 killall waybar
 
-sleep 1
+sleep 5
 
 waybar &
 
