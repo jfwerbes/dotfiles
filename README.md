@@ -153,7 +153,7 @@ stow --dotfiles systemd scripts
 ```
 
 - `scripts/day_night.zsh` handles theme switching, runs `flavours apply` with the appropriate scheme, reloads Waybar, and updates the Hyprpaper wallpaper based on the time of day.【F:scripts/day_night.zsh†L1-L43】
-- The user units `systemd/dot-config/systemd/user/day_night.service` and `day_night.timer` call that script at 06:00 and 18:00 daily.【F:systemd/dot-config/systemd/user/day_night.service†L1-L11】【F:systemd/dot-config/systemd/user/day_night.timer†L1-L11】
+- The user units `systemd/dot-config/systemd/user/day_night.service` and `day_night.timer` call that script at 06:00 and 18:00 daily.
 
 > **Important:** Update the absolute path in `ExecStart=` inside `day_night.service` so it matches your username and dotfiles location.
 
