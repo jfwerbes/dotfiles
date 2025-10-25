@@ -111,18 +111,67 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 - You can combine multiple stow packages flexibly (for instance, if you want `nvim` and `zshrc`).
 - If you ever want to migrate or reorganize a package, just update the folder structure; stow’s behavior remains consistent.
 - The dotfiles are tracked via Git, so you can version your configuration changes, sync across machines, or roll back.
-- ⚠️ **Disclaimer**: Kitty themes are intentionally not included in this repository.  
+- ⚠️ **Disclaimer**: Kitty themes are intentionally not included in this repository.
   If you’d like to install themes, you can clone them from [dexpota/kitty-themes](https://github.com/dexpota/kitty-themes):
 
   ```sh
   git clone https://github.com/dexpota/kitty-themes.git PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes
   ```
 
-  > 💡 **Recommendation**: Remove the `.git` folder from the cloned `kitty-themes` repo:  
+  > 💡 **Recommendation**: Remove the `.git` folder from the cloned `kitty-themes` repo:
   > ```sh
   > rm -rf PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes/.git
-  > ```  
+  > ```
   > This avoids dealing with **nested Git repositories** inside your own dotfiles repo.
+
+---
+
+## 🎨 Theme Management with Flavours
+
+The repository now uses [flavours](https://github.com/Misterio77/flavours) to keep the visual theme of supported applications in sync.
+
+- Stow the `flavours` package alongside the apps you want to theme:
+
+  ```sh
+  stow --dotfiles flavours waybar dunst kitty wofi starship hyprland
+  ```
+
+- The main configuration lives in `flavours/dot-config/flavours/config.toml`. It maps each application to a flavours template and optional hooks (e.g. restarting `dunst`).【F:flavours/dot-config/flavours/config.toml†L1-L52】
+- Run `flavours apply <scheme-name>` to switch to a different theme. The config already references templates for Waybar, Dunst, Kitty, Wofi, Starship, and Hyprland.
+- Hooks are executed through `zsh` so zsh-specific features are available. Adjust the `shell` directive or the individual `[[items]]` blocks if your setup differs.
+
+If you add more applications, extend `config.toml` with another `[[items]]` block pointing to the appropriate config file and template.
+
+---
+
+## ⏱ Automating Day/Night Theme Switching (systemd)
+
+To automatically update wallpapers and themes twice a day, stow the `systemd` and `scripts` packages:
+
+```sh
+stow --dotfiles systemd scripts
+```
+
+- `scripts/day_night.zsh` handles theme switching, runs `flavours apply` with the appropriate scheme, reloads Waybar, and updates the Hyprpaper wallpaper based on the time of day.【F:scripts/day_night.zsh†L1-L43】
+- The user units `systemd/dot-config/systemd/user/day_night.service` and `day_night.timer` call that script at 06:00 and 18:00 daily.【F:systemd/dot-config/systemd/user/day_night.service†L1-L11】【F:systemd/dot-config/systemd/user/day_night.timer†L1-L11】
+
+> **Important:** Update the absolute path in `ExecStart=` inside `day_night.service` so it matches your username and dotfiles location.
+
+After stowing the units, reload the user systemd daemon and enable the timer:
+
+```sh
+systemctl --user daemon-reload
+systemctl --user enable --now day_night.timer
+```
+
+You can verify everything is working with:
+
+```sh
+systemctl --user status day_night.timer
+systemctl --user status day_night.service
+```
+
+The timer will trigger the service at the next scheduled interval. You can also test immediately by manually starting the service with `systemctl --user start day_night.service`.
 
 ---
 
