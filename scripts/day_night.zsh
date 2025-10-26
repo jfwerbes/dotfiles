@@ -7,7 +7,7 @@ set -euo pipefail
 sleep 5
 
 # Define daytime and nighttime images
-typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/2000GT.PNG"
+typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/Japan_Wall.JPG"
 typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
 
 # Current hour (00–23) as an integer
@@ -33,7 +33,7 @@ sleep 5
 # load the wallpapers, sleep, then run if because if flavours is 
 # ran above it will conflict with hyperland instantiating waybar
 if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
-  flavours apply gruvbox-dark-pale
+  flavours apply danqing
 else
   flavours apply darktooth
 fi
