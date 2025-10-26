@@ -13,12 +13,24 @@ Here’s the high-level layout of the repository:
 
 ```
 .
+├── applications/
+│   └── dot-local/
+│       └── share/
+│           └── applications/
 ├── backgrounds/
 │   └── dot-config/
 │       └── backgrounds/
+├── bat/
+│   └── dot-config/
+│       └── bat/
+│           └── syntaxes/
 ├── dunst/
 │   └── dot-config/
 │       └── dunst/
+├── flavours/
+│   └── dot-config/
+│       └── flavours/
+│           └── templates/
 ├── hyprland/
 │   └── dot-config/
 │       └── hypr/
@@ -31,8 +43,15 @@ Here’s the high-level layout of the repository:
 ├── nvim/
 │   └── dot-config/
 │       └── nvim/
+├── scripts/
+│   ├── day_night.zsh
+│   └── gdtouch.zsh
 ├── starship/
 │   └── dot-config/
+├── systemd/
+│   └── dot-config/
+│       └── systemd/
+│           └── user/
 ├── waybar/
 │   └── dot-config/
 │       └── waybar/
