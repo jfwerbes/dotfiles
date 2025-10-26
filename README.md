@@ -152,7 +152,7 @@ To automatically update wallpapers and themes twice a day, stow the `systemd` an
 stow --dotfiles systemd scripts
 ```
 
-- `scripts/day_night.zsh` handles theme switching, runs `flavours apply` with the appropriate scheme, reloads Waybar, and updates the Hyprpaper wallpaper based on the time of day.【F:scripts/day_night.zsh†L1-L43】
+- `scripts/day_night.zsh` handles theme switching, runs `flavours apply` with the appropriate scheme, reloads Waybar, and updates the Hyprpaper wallpaper based on the time of day.
 - The user units `systemd/dot-config/systemd/user/day_night.service` and `day_night.timer` call that script at 06:00 and 18:00 daily.
 
 > **Important:** Update the absolute path in `ExecStart=` inside `day_night.service` so it matches your username and dotfiles location.
@@ -185,15 +185,15 @@ git clone https://github.com/jfwerbes/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 rm -rf .git && git init   # optional: reset Git history for personal use
 
-stow nvim
-stow kitty
-stow zshrc
-stow hyprland
+stow --dotfiles nvim
+stow --dotfiles kitty
+stow --dotfiles zshrc
+stow --dotfiles hyprland
 # … etc.
 
 # (Optional) install kitty themes
-git clone https://github.com/dexpota/kitty-themes.git PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes
-rm -rf PATH_TO_YOUR_DOTFILES/kitty/.config/kitty/kitty-themes/.git
+git clone https://github.com/dexpota/kitty-themes.git PATH_TO_YOUR_DOTFILES/kitty/dot-config/kitty/kitty-themes
+rm -rf PATH_TO_YOUR_DOTFILES/kitty/dot-config/kitty/kitty-themes/.git
 ```
 
 If you encounter file conflicts, stow will warn you; you can fix or remove existing conflicting files, then retry.
