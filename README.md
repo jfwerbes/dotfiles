@@ -136,7 +136,7 @@ The repository now uses [flavours](https://github.com/Misterio77/flavours) to ke
   stow --dotfiles flavours waybar dunst kitty wofi starship hyprland
   ```
 
-- The main configuration lives in `flavours/dot-config/flavours/config.toml`. It maps each application to a flavours template and optional hooks (e.g. restarting `dunst`).【F:flavours/dot-config/flavours/config.toml†L1-L52】
+- The main configuration lives in `flavours/dot-config/flavours/config.toml`. It maps each application to a flavours template and optional hooks (e.g. restarting `dunst`).
 - Run `flavours apply <scheme-name>` to switch to a different theme. The config already references templates for Waybar, Dunst, Kitty, Wofi, Starship, and Hyprland.
 - Hooks are executed through `zsh` so zsh-specific features are available. Adjust the `shell` directive or the individual `[[items]]` blocks if your setup differs.
 
