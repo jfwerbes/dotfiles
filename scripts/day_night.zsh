@@ -33,7 +33,7 @@ sleep 5
 # load the wallpapers, sleep, then run if because if flavours is 
 # ran above it will conflict with hyperland instantiating waybar
 if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
-  flavours apply danqing
+  flavours apply generated
 else
   flavours apply darktooth
 fi
