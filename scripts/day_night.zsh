@@ -3,8 +3,7 @@
 # Fail fast on errors / unset vars / pipeline failures
 set -euo pipefail
 
-# Wait for 5 seconds to start the script.
-sleep 5
+sleep 2
 
 # Define daytime and nighttime images
 typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/Japan_Wall.JPG"
@@ -27,11 +26,11 @@ fi
 # Preload and apply (Hyprland / hyprpaper)
 hyprctl hyprpaper preload -- "$WALLPAPER"
 
-# Give hyprpaper a moment to cache
+# Sleep to allow hyprpaper to cache
 sleep 5
 
-# load the wallpapers, sleep, then run if because if flavours is 
-# ran above it will conflict with hyperland instantiating waybar
+# Load the wallpapers, then re-run flavours because running it above
+# will conflict with Hyprland instantiating Waybar
 if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
   flavours apply generated
 else
@@ -39,16 +38,18 @@ else
 fi
 
 # Restart Waybar
-killall waybar
-
-sleep 5
+if pgrep -x waybar >/dev/null; then
+  killall waybar
+  # Ensure Waybar has fully exited before relaunching
+  while pgrep -x waybar >/dev/null; do
+    sleep 0.1
+  done
+fi
 
 waybar &
 
 # Apply the wallpaper to the current display (adjust output name if needed)
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
 
-# Small buffer, then exit
-sleep 1
 exit 0
 
