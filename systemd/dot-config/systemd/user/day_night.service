@@ -6,6 +6,8 @@ PartOf=graphical-session.target
 
 [Service]
 Type=oneshot
+# Prevent the transient Waybar instance from being killed when the oneshot finishes
+KillMode=none
 # Run as the logged-in user (this is a user unit, so no User= needed)
 # Ensure we have a shell (if you need zsh features)
 ExecStart=/usr/bin/zsh -lc '/home/brutus/.dotfiles/scripts/day_night.zsh'
