@@ -146,6 +146,60 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 
 ---
 
+## 📦 Package Dependencies
+
+Several configs and scripts assume the following software is already available. Install them before stowing to avoid missing command errors.
+
+### Pacman (official repositories)
+
+| Package | Required by |
+| --- | --- |
+| `hyprland` | Core compositor referenced throughout `hyprland/dot-config/hypr/hyprland.conf` and by `scripts/day_night.zsh` via `hyprctl`. |
+| `hyprpaper` | Wallpaper management configured in `hyprpaper/dot-config/hypr/hyprpaper.conf` and reloaded by `scripts/day_night.zsh`. |
+| `waybar` | Status bar with config in `waybar/dot-config/waybar/` and restarted from `scripts/day_night.zsh`. |
+| `openrgb` | Launched on login in `hyprland/dot-config/hypr/hyprland.conf`. |
+| `kitty` | Default terminal in Hyprland, the Kitty profile itself, and the Spotify desktop entry under `applications/`. |
+| `wofi` | Application launcher bound as `$menu` in `hyprland/dot-config/hypr/hyprland.conf`. |
+| `dolphin` | File manager referenced via `$fileManager` in the Hyprland config. |
+| `zsh` | Shell used by `scripts/day_night.zsh` and the `systemd` user unit in `systemd/dot-config/systemd/user/`. |
+| `starship` | Prompt configuration stored in `starship/dot-config/starship.toml` and initialized from `.zshrc`. |
+| `zoxide` | Directory jumping initialized from `.zshrc`. |
+| `fzf` | Interactive fuzzy finder sourced in `.zshrc`. |
+| `fd` | Preferred search backend for FZF functions in `.zshrc`. |
+| `eza` | Replacement for `ls` aliased in `.zshrc`. |
+| `bat` | Replacement for `cat` aliased in `.zshrc`. |
+| `neovim` | Editor targeted by the `vim` alias in `.zshrc` and the `nvim` package. |
+| `wf-recorder` | Screen recording alias in `.zshrc`. |
+| `slurp` | Region selection helper used by the `wf-recorder` alias. |
+| `wireplumber` | Audio module configured in `waybar/dot-config/waybar/config`. |
+| `pavucontrol` | Audio mixer launched from the Waybar module on right-click. |
+| `dunst` | Notification daemon themed through `dunst/dot-config/dunst/dunstrc` and `flavours` hooks. |
+| `godot` | Binary referenced by `applications/dot-local/share/applications/godot.desktop`. |
+| `openssh` | Provides `ssh-add`, invoked near the top of `.zshrc`. |
+
+Install everything from the official repositories with:
+
+```sh
+sudo pacman -S --needed hyprland hyprpaper waybar openrgb kitty wofi dolphin zsh starship zoxide fzf fd eza bat neovim wf-recorder slurp wireplumber pavucontrol dunst godot openssh
+```
+
+### AUR packages (via yay)
+
+| Package | Required by |
+| --- | --- |
+| `flavours` | Theme orchestrator configured in `flavours/dot-config/flavours/` and triggered by `scripts/day_night.zsh`. |
+| `spotify-player` | CLI Spotify client launched by `applications/dot-local/share/applications/spotify.desktop` and the `spotify` alias. |
+| `nerd-fonts-anonymice` | Provides “AnonymicePro Nerd Font” used in `dunst/dot-config/dunst/dunstrc` and `waybar/dot-config/waybar/style.css`. |
+| `nerd-fonts-caskaydia-cove` | Supplies “CaskaydiaCove Nerd Font Mono” configured in `kitty/dot-config/kitty/kitty.conf`. |
+
+Install these packages from the AUR with:
+
+```sh
+yay -S --needed flavours spotify-player nerd-fonts-anonymice nerd-fonts-caskaydia-cove
+```
+
+---
+
 ## 🎨 Theme Management with Flavours
 
 The repository now uses [flavours](https://github.com/Misterio77/flavours) to keep the visual theme of supported applications in sync.
