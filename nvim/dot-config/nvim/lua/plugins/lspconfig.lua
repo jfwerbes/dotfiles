@@ -9,6 +9,8 @@ return {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
         clangd = {},
+        gdscript = {},
+        gdshader_lsp = {},
       },
     },
   },
