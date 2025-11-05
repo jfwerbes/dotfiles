@@ -58,6 +58,7 @@ alias spotify='spotify_player'
 alias cat='bat'
 alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 alias screenrecord='wf-recorder -g "$(slurp)" -f captures/videos/behaviour.mp4'
+alias invoice='~/go/bin/invoice'
 
 source ~/.dotfiles/scripts/fzf-git.sh/fzf-git.sh
 
