@@ -78,11 +78,13 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 
 ### Usage
 
-1. Clone this repository, e.g.:
+1. Clone this repository and install dependency packages, e.g.:
 
    ```sh
    git clone https://github.com/jfwerbes/dotfiles.git ~/.dotfiles
    cd ~/.dotfiles
+   chmod +x ./install/install.sh
+   ./install/install.sh
    ```
 
    > 💡 **Recommendation**: Remove the `.git` folder if you want to version-control your dotfiles yourself.  
