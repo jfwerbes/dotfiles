@@ -15,7 +15,7 @@ PRESENT_TIME=$(date +%H)
 
 # Choose wallpaper based on time of day
 typeset WALLPAPER
-if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
+if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 17 ]]; then
   flavours apply gruvbox-dark-pale
   WALLPAPER="$DAYTIME_WALLPAPER"
 else
@@ -31,7 +31,7 @@ sleep 5
 
 # Load the wallpapers, then re-run flavours because running it above
 # will conflict with Hyprland instantiating Waybar
-if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 18 ]]; then
+if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 17 ]]; then
   flavours apply generated
 else
   flavours apply darktooth
