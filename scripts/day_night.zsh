@@ -9,18 +9,27 @@ sleep 2
 typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/Japan_Wall.JPG"
 typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
 
-# Current hour (00–23) as an integer
-typeset -i PRESENT_TIME
-PRESENT_TIME=$(date +%H)
+# Theme schemes
+typeset -r DAYTIME_SCHEME="generated"
+typeset -r NIGHTTIME_SCHEME="darktooth"
 
-# Choose wallpaper based on time of day
-typeset WALLPAPER
-if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 17 ]]; then
-  flavours apply gruvbox-dark-pale
+# Current hour (00–23) as an integer
+typeset -i PRESENT_TIME=$(date +%H)
+
+# Determine target assets once
+if (( PRESENT_TIME >= 6 && PRESENT_TIME < 17 )); then
+  TARGET_SCHEME="$DAYTIME_SCHEME"
   WALLPAPER="$DAYTIME_WALLPAPER"
 else
-  flavours apply darktooth
+  TARGET_SCHEME="$NIGHTTIME_SCHEME"
   WALLPAPER="$NIGHTTIME_WALLPAPER"
+fi
+
+# Determine whether the theme actually needs to change
+typeset CURRENT_SCHEME=$(flavours current | head -n1 | tr -d '\n')
+typeset -i NEEDS_SCHEME_CHANGE=0
+if [[ "$CURRENT_SCHEME" != "$TARGET_SCHEME" ]]; then
+  NEEDS_SCHEME_CHANGE=1
 fi
 
 # Preload and apply (Hyprland / hyprpaper)
@@ -29,27 +38,23 @@ hyprctl hyprpaper preload -- "$WALLPAPER"
 # Sleep to allow hyprpaper to cache
 sleep 5
 
-# Load the wallpapers, then re-run flavours because running it above
-# will conflict with Hyprland instantiating Waybar
-if [[ PRESENT_TIME -ge 6 && PRESENT_TIME -lt 17 ]]; then
-  flavours apply generated
-else
-  flavours apply darktooth
-fi
+# Apply theme only if necessary
+if (( NEEDS_SCHEME_CHANGE )); then
+  flavours apply "$TARGET_SCHEME"
 
-# Restart Waybar
-if pgrep -x waybar >/dev/null; then
-  killall waybar
-  # Ensure Waybar has fully exited before relaunching
-  while pgrep -x waybar >/dev/null; do
-    sleep 0.1
-  done
+  # Restart Waybar
+  if pgrep -x waybar >/dev/null; then
+    killall waybar
+    # Ensure Waybar has fully exited before relaunching
+    while pgrep -x waybar >/dev/null; do
+      sleep 0.1
+    done
+  fi
+ 
+  waybar &
 fi
-
-waybar &
 
 # Apply the wallpaper to the current display (adjust output name if needed)
 hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
 
 exit 0
-
