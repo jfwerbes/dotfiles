@@ -56,11 +56,11 @@ template = "wofi"
 rewrite = true
 subtemplate = "default"
 
-[[items]]
-file = "~/.dotfiles/starship/dot-config/starship.toml"
-template = "starship"
-rewrite = true
-subtemplate = "default"
+# [[items]]
+# file = "~/.dotfiles/starship/dot-config/starship.toml"
+# template = "starship"
+# rewrite = true
+# subtemplate = "default"
 
 [[items]]
 file = "~/.dotfiles/hyprland/dot-config/hypr/hyprland.conf"
