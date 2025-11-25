@@ -1,70 +1,158 @@
+@define-color foreground #{{base05-hex}};
+@define-color background #{{base00-hex}};
+@define-color cursor #{{base05-hex}};
+
+@define-color color0 #{{base00-hex}};
+@define-color color1 #{{base01-hex}};
+@define-color color2 #{{base02-hex}};
+@define-color color3 #{{base03-hex}};
+@define-color color4 #{{base04-hex}};
+@define-color color5 #{{base05-hex}};
+@define-color color6 #{{base06-hex}};
+@define-color color7 #{{base07-hex}};
+@define-color color8 #{{base08-hex}};
+@define-color color9 #{{base09-hex}};
+@define-color color10 #{{base0A-hex}};
+@define-color color11 #{{base0B-hex}};
+@define-color color12 #{{base0C-hex}};
+@define-color color13 #{{base0D-hex}};
+@define-color color14 #{{base0E-hex}};
+@define-color color15 #{{base0F-hex}};
+
 * {
-	font-size: 20px;
-	font-family: AnonymicePro Nerd Font, monospace;
+    font-size:15px;
+    font-family: "CaskaydiaCove Nerd Font Mono";
 }
+window#waybar{
+    all:unset;
+}
+.modules-left {
+    padding:7px;
+    margin:10 0 5 10;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding:7px;
+    margin:10 0 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding:7px;
+    margin: 10 10 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+tooltip {
+    background:@background;
+    color: @color7;
+}
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+    transition: all .3s ease;
+    color:@color9;
+}
+#clock{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+#custom-pacman{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 
-window#waybar {
-	background: #{{base00-hex}};
-  opacity: 0.9;
-	color: #{{base06-hex}};
 }
-
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #{{base02-hex}};
+#workspaces {
+    padding: 0px 5px;
 }
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #{{base00-hex}};
-	background: #{{base02-hex}};
-}
-
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#wireplumber,
-#memory,
-#cpu,
-#disk,
-#tray {
-	background: #{{base02-hex}};
-}
-
 #workspaces button {
-	padding: 0 2px;
-	color: #{{base07-hex}};
+    all:unset;
+    padding: 0px 5px;
+    color: alpha(@color9,.4);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color:rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
 }
 #workspaces button.active {
-	color: #{{base08-hex}};
+    color: @color9;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
-#workspaces button:hover {
-	background: #{{base05-hex}};
-	border: #{{base05-hex}};
-	padding: 0 3px;
+#workspaces button.empty:hover {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: @color9;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#bluetooth{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+#network{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+#group-expand{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+}
+#custom-expand{
+    padding: 0px 5px;
+    color:alpha(@foreground,.2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+    transition: all .3s ease; 
+}
+#custom-expand:hover{
+    color:rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+#custom-colorpicker{
+    padding: 0px 5px;
+}
+#cpu,#memory,#temperature{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+    color:@color7;
+
+}
+#custom-endpoint{
+    color:transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+
+}
+#tray{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+
+}
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .3s ease; 
 }
 
-#wireplumber {
-  color: #{{base09-hex}};
-}
-#memory {
-	color: #{{base0E-hex}};
-}
-#cpu {
-	color: #{{base09-hex}};
-}
-#disk {
-	color: #{{base0E-hex}};
-}
-
-#clock,
-#wireplumber,
-#memory,
-#cpu,
-#disk {
-	padding: 0 10px;
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .3s ease; 
 }
