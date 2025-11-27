@@ -51,7 +51,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+#clock:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
     color:@color9;
 }
@@ -59,12 +59,6 @@ tooltip {
     padding: 0px 5px;
     color:@color7;
     transition: all .3s ease;
-}
-#custom-pacman{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
 }
 #workspaces {
     padding: 0px 5px;
