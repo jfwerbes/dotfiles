@@ -42,16 +42,17 @@ sleep 5
 if (( NEEDS_SCHEME_CHANGE )); then
   flavours apply "$TARGET_SCHEME"
 
-  # Restart Waybar
-  if pgrep -x waybar >/dev/null; then
-    killall waybar
-    # Ensure Waybar has fully exited before relaunching
-    while pgrep -x waybar >/dev/null; do
-      sleep 0.1
-    done
-  fi
- 
-  waybar &
+  #No longer need to restart waybar, reloads style change dynamically
+#  # Restart Waybar
+#  if pgrep -x waybar >/dev/null; then
+#    killall waybar
+#    # Ensure Waybar has fully exited before relaunching
+#    while pgrep -x waybar >/dev/null; do
+#      sleep 0.1
+#    done
+#  fi
+# 
+#  waybar &
 fi
 
 # Apply the wallpaper to the current display (adjust output name if needed)
