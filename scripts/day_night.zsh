@@ -53,9 +53,11 @@ if (( NEEDS_SCHEME_CHANGE )); then
 #  fi
 # 
 #  waybar &
+
+  # Apply the wallpaper to the current display (adjust output name if needed)
+  hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
+
 fi
 
-# Apply the wallpaper to the current display (adjust output name if needed)
-hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
 
 exit 0
