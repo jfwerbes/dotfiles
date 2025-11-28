@@ -1,0 +1,21 @@
+[Desktop Entry]
+
+# The type as listed above
+Type=Application
+
+# The name of the application
+Name=pokefinder
+
+# A comment which can/will be used as a tooltip
+Comment=find good pokemon
+
+# The path to the folder in which the executable is run
+Path=/usr/bin
+
+Exec=pokefinder
+
+# The name of the icon that will be used to display this entry
+Icon=pokefinder
+
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
