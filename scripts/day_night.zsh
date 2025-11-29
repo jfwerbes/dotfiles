@@ -5,31 +5,30 @@ set -euo pipefail
 
 sleep 2
 
-# Define daytime and nighttime images
+# Define daytime and nighttime images/themes
 typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/Japan_Wall.JPG"
-typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
+typeset -r DAYTIME_THEME="generated"
 
-# Theme schemes
-typeset -r DAYTIME_SCHEME="generated"
-typeset -r NIGHTTIME_SCHEME="darktooth"
+typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
+typeset -r NIGHTTIME_THEME="darktooth"
 
 # Current hour (00–23) as an integer
 typeset -i PRESENT_TIME=$(date +%H)
 
 # Determine target assets once
 if (( PRESENT_TIME >= 6 && PRESENT_TIME < 17 )); then
-  TARGET_SCHEME="$DAYTIME_SCHEME"
+  TARGET_THEME="$DAYTIME_THEME"
   WALLPAPER="$DAYTIME_WALLPAPER"
 else
-  TARGET_SCHEME="$NIGHTTIME_SCHEME"
+  TARGET_THEME="$NIGHTTIME_THEME"
   WALLPAPER="$NIGHTTIME_WALLPAPER"
 fi
 
 # Determine whether the theme actually needs to change
-typeset CURRENT_SCHEME=$(flavours current | head -n1 | tr -d '\n')
-typeset -i NEEDS_SCHEME_CHANGE=0
-if [[ "$CURRENT_SCHEME" != "$TARGET_SCHEME" ]]; then
-  NEEDS_SCHEME_CHANGE=1
+typeset CURRENT_THEME=$(flavours current | head -n1 | tr -d '\n')
+typeset -i NEEDS_THEME_CHANGE=0
+if [[ "$CURRENT_THEME" != "$TARGET_THEME" ]]; then
+  NEEDS_THEME_CHANGE=1
 fi
 
 # Preload and apply (Hyprland / hyprpaper)
@@ -39,8 +38,8 @@ hyprctl hyprpaper preload -- "$WALLPAPER"
 sleep 5
 
 # Apply theme only if necessary
-if (( NEEDS_SCHEME_CHANGE )); then
-  flavours apply "$TARGET_SCHEME"
+if (( NEEDS_THEME_CHANGE )); then
+  flavours apply "$TARGET_THEME"
 
   #No longer need to restart waybar, reloads style change dynamically
 #  # Restart Waybar
