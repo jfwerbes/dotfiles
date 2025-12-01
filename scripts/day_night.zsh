@@ -6,10 +6,10 @@ set -euo pipefail
 sleep 2
 
 # Define daytime and nighttime images/themes
-typeset -r DAYTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/Japan_Wall.JPG"
+typeset -r DAYTIME_WALLPAPER="$HOME/.config/backgrounds/Japan_Wall.JPG"
 typeset -r DAYTIME_THEME="generated"
 
-typeset -r NIGHTTIME_WALLPAPER="$HOME/.dotfiles/backgrounds/dot-config/backgrounds/night.jpg"
+typeset -r NIGHTTIME_WALLPAPER="$HOME/.config/backgrounds/night.jpg"
 typeset -r NIGHTTIME_THEME="darktooth"
 
 # Current hour (00–23) as an integer
