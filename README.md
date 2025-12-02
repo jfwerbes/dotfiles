@@ -4,7 +4,7 @@ This repository contains my personal dotfiles and configuration, organized to be
 
 The goal is to keep each application’s config in its own directory, and then use `stow` to symlink them into the home directory (or other target directories).  
 
-![image](https://github.com/user-attachments/assets/2381b318-2fcf-4913-ae21-73c0683e0828)
+![image](https://github.com/user-attachments/assets/8794bd96-4f8b-4379-87ba-80ce47cdf693)
 ![image](https://github.com/user-attachments/assets/ef5ce92e-504d-4b85-b20b-1134bfe40ac8)
 ---
 
