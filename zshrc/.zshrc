@@ -55,6 +55,7 @@ bindkey '\e[B' history-search-forward
 # Aliases
 alias hc='vim ~/.config/hypr/hyprland.conf'
 alias vim='nvim'
+alias vi='nvim'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias spotify='spotify_player'
 alias cat='bat'
@@ -62,6 +63,8 @@ alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time
 alias screenrecord='wf-recorder -g "$(slurp)" -f captures/videos/behaviour.mp4'
 alias invoice='~/go/bin/invoice'
 alias gcm='git commit -m'
+
+export EDITOR=nvim
 
 source ~/.dotfiles/scripts/fzf-git.sh/fzf-git.sh
 
