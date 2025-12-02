@@ -1,0 +1,13 @@
+[Unit]
+Description=Load Linux VT color palette
+DefaultDependencies=no
+After=systemd-modules-load.service local-fs.target
+Before=greetd.service
+ConditionPathExists=/home/brutus/.dotfiles/vtbase16
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setvtrgb /home/brutus/.dotfiles/vtbase16/vttheme.hex
+
+[Install]
+WantedBy=sysinit.target
