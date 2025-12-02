@@ -118,6 +118,9 @@ preloaders = [
 	{ mime = "font/*", run = "font" },
 	{ mime = "application/ms-opentype", run = "font" },
 ]
+prepend_previewers = [
+  { name = "*.gd", run = "bat" },
+]
 previewers = [
 	{ name = "*/", run = "folder" },
 	# Code
