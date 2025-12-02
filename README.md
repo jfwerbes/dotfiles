@@ -129,8 +129,8 @@ Here’s a basic workflow for deploying/configuring your dotfiles via `stow`.
 > The `greetd` and `systemd-system` packages target directories at the filesystem root. When stowing either of these packages, be sure to specify the root directory explicitly:
 >
 > ```sh
-> stow --dotfiles -t / greetd
-> stow --dotfiles -t / systemd-system
+> sudo stow --dotfiles -t / greetd
+> sudo stow --dotfiles -t / systemd-system
 > ```
 >
 > Omitting the `-t /` flag will attempt to place the files in your home directory instead of their intended system locations.
