@@ -3,7 +3,7 @@
 # Fail fast on errors / unset vars / pipeline failures
 set -euo pipefail
 
-sleep 1
+sleep 0.5
 
 # Define daytime and nighttime images/themes
 typeset -r DAYTIME_WALLPAPER="$HOME/.config/backgrounds/Japan_Wall.JPG"
