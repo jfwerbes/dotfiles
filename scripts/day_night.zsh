@@ -3,7 +3,7 @@
 # Fail fast on errors / unset vars / pipeline failures
 set -euo pipefail
 
-sleep 2
+sleep 1
 
 # Define daytime and nighttime images/themes
 typeset -r DAYTIME_WALLPAPER="$HOME/.config/backgrounds/Japan_Wall.JPG"
@@ -32,10 +32,7 @@ if [[ "$CURRENT_THEME" != "$TARGET_THEME" ]]; then
 fi
 
 # Preload and apply (Hyprland / hyprpaper)
-hyprctl hyprpaper preload -- "$WALLPAPER"
-
-# Sleep to allow hyprpaper to cache
-sleep 5
+# hyprctl hyprpaper preload -- "$WALLPAPER"
 
 # Apply theme only if necessary
 if (( NEEDS_THEME_CHANGE )); then
@@ -57,6 +54,6 @@ if (( NEEDS_THEME_CHANGE )); then
 fi
 
 # Apply the wallpaper to the current display (adjust output name if needed)
-hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
+hyprctl hyprpaper reload "HDMI-A-1,$WALLPAPER"
 
 exit 0
