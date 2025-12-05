@@ -53,7 +53,7 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
 # Aliases
-alias hc='vim ~/.config/hypr/hyprland.conf'
+alias hc='vim ~/.config/flavours/templates/hyprland/templates/default.mustache'
 alias vim='nvim'
 alias vi='nvim'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
