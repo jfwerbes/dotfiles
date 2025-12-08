@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["clock","tray"],
+        "modules-left": ["clock"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["group/expand","network","battery"],
 
@@ -76,7 +76,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand", "cpu","memory","temperature","custom/endpoint"],
+            "modules": ["custom/expand", "cpu","memory","temperature","tray","custom/endpoint"],
         },
         "cpu": {
             "format": "󰻠",
