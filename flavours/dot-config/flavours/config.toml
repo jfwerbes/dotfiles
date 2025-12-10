@@ -67,3 +67,9 @@ file = "~/.dotfiles/hyprland/dot-config/hypr/hyprland.conf"
 template = "hyprland"
 rewrite = true
 subtemplate = "default"
+
+[[items]]
+file = "~/.dotfiles/cava/dot-config/cava/themes/default.cava"
+template = "cava"
+rewrite = true
+subtemplate = "default"
