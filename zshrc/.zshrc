@@ -63,6 +63,7 @@ alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time
 alias screenrecord='wf-recorder -g "$(slurp)" -f captures/videos/behaviour.mp4'
 alias invoice='~/projects/go/bin/invoice'
 alias gcm='git commit -m'
+alias paint='pinta'
 
 # Used by yazi
 export EDITOR=nvim
