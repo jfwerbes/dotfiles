@@ -7,6 +7,7 @@ return {
         c = { "clang_format" },
         cpp = { "clang_format" },
         sh = { "shfmt" },
+        python = { "black" },
       },
     },
   },

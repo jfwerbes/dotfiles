@@ -12,7 +12,17 @@ return {
             filetypes = { "sh", "zsh" },
           },
         },
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "strict",
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
         clangd = {},
         gdscript = {},
         gdshader_lsp = {},

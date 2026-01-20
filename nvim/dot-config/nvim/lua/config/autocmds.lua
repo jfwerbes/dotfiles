@@ -14,3 +14,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     require("conform").format({ bufnr = args.buf, lsp_fallback = true })
   end,
 })
+
+-- Autoformat python files on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf, lsp_fallback = true })
+  end,
+})
