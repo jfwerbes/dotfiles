@@ -12,14 +12,15 @@
 ################
 
 # See https://wiki.hypr.land/Configuring/Monitors/
-monitor=,preferred,2880x1800,2
+monitor=Unknown-1,preferred,2880x1800,2
+monitor = , preferred, auto, 1
 
 # Custom waybar rules to prevent flickering
-layerrule = blur, waybar
-layerrule = ignorealpha, waybar
+layerrule = blur on, match:class waybar
+layerrule = ignore_alpha 0, match:class waybar
 
-layerrule = blur, dunst
-layerrule = ignorealpha, dunst
+layerrule = blur on, match:class dunst
+layerrule = ignore_alpha 0, match:class dunst
 
 ###################
 ### MY PROGRAMS ###
@@ -330,7 +331,7 @@ bindl=,switch:Lid Switch, exec, systemctl suspend
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 
 # Ignore maximize requests from apps. You'll probably like this.
-windowrule = suppressevent maximize, class:.*
+windowrule = suppress_event maximize, match:class .*
 
 # Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+windowrule = no_focus on,match:class ^$,match:title ^$,match:xwayland 1,match:float 1,match:fullscreen 0,match:pin 0
