@@ -1,23 +1,23 @@
-@define-color foreground #1d2021;
-@define-color background #1d2021;
-@define-color cursor #a89984;
+@define-color foreground #1b1e23;
+@define-color background #1b1e23;
+@define-color cursor #d1cabf;
 
-@define-color color0 #1d2021;
-@define-color color1 #32302f;
-@define-color color2 #504945;
-@define-color color3 #665c54;
-@define-color color4 #928374;
-@define-color color5 #a89984;
-@define-color color6 #d5c4a1;
-@define-color color7 #fdf4c1;
-@define-color color8 #fb543f;
-@define-color color9 #fe8625;
-@define-color color10 #fac03b;
-@define-color color11 #95c085;
-@define-color color12 #8ba59b;
-@define-color color13 #0d6678;
-@define-color color14 #8f4673;
-@define-color color15 #a87322;
+@define-color color0 #1b1e23;
+@define-color color1 #3f4042;
+@define-color color2 #646361;
+@define-color color3 #888580;
+@define-color color4 #ada8a0;
+@define-color color5 #d1cabf;
+@define-color color6 #d8d2c8;
+@define-color color7 #dfdad2;
+@define-color color8 #cf4c4a;
+@define-color color9 #778192;
+@define-color color10 #7d7963;
+@define-color color11 #84747e;
+@define-color color12 #917077;
+@define-color color13 #7e8d99;
+@define-color color14 #9da5b6;
+@define-color color15 #7b777d;
 
 * {
     font-size:15px;

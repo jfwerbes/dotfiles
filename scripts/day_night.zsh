@@ -54,6 +54,6 @@ if (( NEEDS_THEME_CHANGE )); then
 fi
 
 # Apply the wallpaper to the current display (adjust output name if needed)
-hyprctl hyprpaper reload "Unknown-1,$WALLPAPER"
+hyprctl hyprpaper wallpaper "Unknown-1,$WALLPAPER"
 
 exit 0
