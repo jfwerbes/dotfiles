@@ -68,6 +68,9 @@ alias paint='pinta'
 # Used by yazi
 export EDITOR=nvim
 
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 source ~/.dotfiles/scripts/fzf-git.sh/fzf-git.sh
 
 # Plugins
