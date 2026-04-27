@@ -70,6 +70,7 @@ export EDITOR=nvim
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 source ~/.dotfiles/scripts/fzf-git.sh/fzf-git.sh
 
