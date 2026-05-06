@@ -8,9 +8,7 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         bashls = {
-          settings = {
-            filetypes = { "sh", "zsh" },
-          },
+          filetypes = { "sh", "zsh" },
         },
         pyright = {
           settings = {

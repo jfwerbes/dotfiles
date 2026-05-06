@@ -3,7 +3,7 @@
 # Fail fast on errors / unset vars / pipeline failures
 set -euo pipefail
 
-sleep 0.5
+sleep 0.5  # give Hyprland IPC time to be ready when triggered at login
 
 # Define daytime and nighttime images/themes
 typeset -r DAYTIME_WALLPAPER="$HOME/.config/backgrounds/Japan_Wall.JPG"
@@ -25,7 +25,7 @@ else
 fi
 
 # Determine whether the theme actually needs to change
-typeset CURRENT_THEME=$(flavours current | head -n1 | tr -d '\n')
+typeset CURRENT_THEME=$(flavours current)
 typeset -i NEEDS_THEME_CHANGE=0
 if [[ "$CURRENT_THEME" != "$TARGET_THEME" ]]; then
   NEEDS_THEME_CHANGE=1
@@ -37,23 +37,10 @@ fi
 # Apply theme only if necessary
 if (( NEEDS_THEME_CHANGE )); then
   flavours apply "$TARGET_THEME"
-
-  #No longer need to restart waybar, reloads style change dynamically
-#  # Restart Waybar
-#  if pgrep -x waybar >/dev/null; then
-#    killall waybar
-#    # Ensure Waybar has fully exited before relaunching
-#    while pgrep -x waybar >/dev/null; do
-#      sleep 0.1
-#    done
-#  fi
-# 
-#  waybar &
-
-
 fi
 
-# Apply the wallpaper to the current display (adjust output name if needed)
-hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER"
+# Apply the wallpaper to the first active monitor
+MONITOR=$(hyprctl monitors -j | jq -r '.[0].name')
+hyprctl hyprpaper wallpaper "$MONITOR,$WALLPAPER"
 
 exit 0

@@ -17,7 +17,7 @@ Personal dotfiles managed with **GNU Stow**, organized so each application lives
 ├── flavours/dot-config/flavours/templates/
 ├── greetd/etc/greetd/
 ├── hyprland/dot-config/hypr/
-├── hyprpaper/dot-config/hypr/
+├── hypr/dot-config/hypr/
 ├── install/
 ├── kitty/dot-config/kitty/
 ├── nvim/dot-config/nvim/
@@ -70,7 +70,7 @@ Stow `systemd` and `scripts` to enable scheduled theming:
 stow --dotfiles systemd scripts
 ```
 
-`scripts/day_night.zsh` picks a wallpaper, applies the matching flavours scheme, preloads Hyprpaper, and Waybar picks up style changes automatically via its `reload_style_on_change` setting. User units `day_night.service` and `day_night.timer` run the script at 06:00 and 18:00 (update the `ExecStart` path for your username). After stowing, run `systemctl --user daemon-reload` and `systemctl --user enable --now day_night.timer`.
+`scripts/day_night.zsh` picks a wallpaper, applies the matching flavours scheme, and sets it on the first active monitor via `hyprctl`. Waybar picks up style changes automatically via its `reload_style_on_change` setting. User units `day_night.service` and `day_night.timer` run the script at 06:00 and 17:00 (update the `ExecStart` path for your username). After stowing, run `systemctl --user daemon-reload` and `systemctl --user enable --now day_night.timer`.
 
 ---
 
@@ -80,7 +80,7 @@ Install the expected tools before stowing to avoid missing command errors.
 
 ### Pacman
 
-`hyprland` · `hyprpaper` · `waybar` · `openrgb` · `kitty` · `wofi` · `dolphin` · `zsh` · `starship` · `zoxide` · `fzf` · `fd` · `eza` · `bat` · `neovim` · `wf-recorder` · `slurp` · `wireplumber` · `pavucontrol` · `dunst` · `godot` · `openssh`
+`hyprland` · `hyprpaper` · `waybar` · `openrgb` · `kitty` · `wofi` · `dolphin` · `zsh` · `starship` · `zoxide` · `fzf` · `fd` · `eza` · `bat` · `neovim` · `wf-recorder` · `slurp` · `jq` · `wireplumber` · `pavucontrol` · `dunst` · `godot` · `openssh`
 
 ### AUR (via yay)
 

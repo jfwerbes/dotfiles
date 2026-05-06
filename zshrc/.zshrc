@@ -29,7 +29,7 @@ eval "$(fzf --zsh)"
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden -- strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
@@ -60,7 +60,7 @@ alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias spotify='spotify_player'
 alias cat='bat'
 alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias screenrecord='wf-recorder -g "$(slurp)" -f captures/videos/behaviour.mp4'
+alias screenrecord='wf-recorder -g "$(slurp)" -f "$HOME/captures/videos/$(date +%Y%m%d_%H%M%S).mp4"'
 alias invoice='~/projects/go/bin/invoice'
 alias gcm='git commit -m'
 alias paint='pinta'
@@ -73,6 +73,3 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 source ~/.dotfiles/scripts/fzf-git.sh/fzf-git.sh
-
-# Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)

@@ -18,7 +18,7 @@ for filename in "$@"; do
   uid_string="$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 13)"
   set -o pipefail
 
-  # Crete UID file file_contents
+  # Create UID file contents
   file_contents="uid://${uid_string}"
 
   # Write contents to file and alert user
