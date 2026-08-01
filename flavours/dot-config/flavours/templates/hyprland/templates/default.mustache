@@ -114,7 +114,7 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
 	master = {
-		orientation = center,
+		orientation = "center",
 		slave_count_for_center_master = 0,
 		mfact = 0.48,
 	},
