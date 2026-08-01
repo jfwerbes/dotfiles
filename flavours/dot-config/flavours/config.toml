@@ -63,7 +63,7 @@ subtemplate = "default"
 # subtemplate = "default"
 
 [[items]]
-file = "~/.dotfiles/hyprland/dot-config/hypr/hyprland.conf"
+file = "~/.dotfiles/hyprland/dot-config/hypr/feel.lua"
 template = "hyprland"
 rewrite = true
 subtemplate = "default"
