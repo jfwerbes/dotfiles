@@ -6,10 +6,11 @@
 -- For a full list, see the wiki
 
 require("monitors")
-require("programs")
 require("autostart")
 require("env")
 require("permissions")
 require("feel")
+require("input")
+require("misc")
 require("keybindings")
-require("windows_Workspaces")
+require("windows_workspaces")

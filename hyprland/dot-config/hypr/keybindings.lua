@@ -1,4 +1,13 @@
 ---------------------
+---- MY PROGRAMS ----
+---------------------
+
+-- Set programs that you use.
+local terminal = "kitty"
+local fileManager = "kitty -e yazi"
+local menu = "wofi --show drun --prompt Launch..."
+
+---------------------
 ---- KEYBINDINGS ----
 ---------------------
 
@@ -7,7 +16,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- MY CUSTOM BINDS
 
 hl.bind("CTRL + RETURN", hl.dsp.layout("swapwithmaster"))
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("hyprshot -m region -o '/home/brutus/captures/screenshots"))
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("hyprshot -m region -o '/home/brutus/captures/screenshots'"))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -25,9 +34,9 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
