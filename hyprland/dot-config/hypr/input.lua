@@ -18,6 +18,9 @@ hl.config({
 			natural_scroll = false,
 		},
 	},
+	cursor = {
+		inactive_timeout = 0.5,
+	},
 })
 
 hl.gesture({
