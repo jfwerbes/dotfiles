@@ -39,6 +39,7 @@ REPO_PKGS=(
   hyprpaper
   hyprshot
   i2c-tools
+  imagemagick
   intel-ucode
   iptables
   iwd
@@ -76,6 +77,7 @@ REPO_PKGS=(
   qt5-wayland
   qt6-wayland
   ripgrep
+  rofi
   ruby
   slurp
   smartmontools
@@ -97,7 +99,6 @@ REPO_PKGS=(
   wget
   wireless_tools
   wireplumber
-  wofi
   wpa_supplicant
   xdg-desktop-portal-hyprland
   xdg-utils

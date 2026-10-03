@@ -20,12 +20,12 @@ Personal dotfiles managed with **GNU Stow**, organized so each application lives
 ├── hypr/dot-config/hypr/
 ├── install/
 ├── kitty/dot-config/kitty/
+├── rofi/dot-config/rofi/
 ├── nvim/dot-config/nvim/
-├── scripts/{day_night.zsh,gdtouch.zsh,fzf-git.sh/}
+├── scripts/{day_night.zsh,wallpick.py,gdtouch.zsh,fzf-git.sh/}
 ├── starship/dot-config/
 ├── systemd/dot-config/systemd/user/
 ├── waybar/dot-config/waybar/
-├── wofi/dot-config/wofi/
 ├── yazi/dot-config/yazi/
 └── zshrc/.zshrc
 ```
@@ -58,7 +58,7 @@ Remove `.git` if you plan to version your own changes.
 
 ## 🎨 Theme management
 
-[flavours](https://github.com/Misterio77/flavours) keeps supported apps in sync. Stow `flavours` alongside themed apps (Waybar, Dunst, Kitty, Wofi, Starship, Hyprland) and run `flavours apply <scheme>` to switch themes. Templates live in `flavours/dot-config/flavours/`.
+[flavours](https://github.com/Misterio77/flavours) keeps supported apps in sync. Stow `flavours` alongside themed apps (Waybar, Dunst, Kitty, Rofi, Starship, Hyprland) and run `flavours apply <scheme>` to switch themes. Templates live in `flavours/dot-config/flavours/`.
 
 ---
 
@@ -80,7 +80,7 @@ Install the expected tools before stowing to avoid missing command errors.
 
 ### Pacman
 
-`hyprland` · `hyprpaper` · `waybar` · `openrgb` · `kitty` · `wofi` · `dolphin` · `zsh` · `starship` · `zoxide` · `fzf` · `fd` · `eza` · `bat` · `neovim` · `wf-recorder` · `slurp` · `jq` · `wireplumber` · `pavucontrol` · `dunst` · `godot` · `openssh`
+`hyprland` · `hyprpaper` · `waybar` · `openrgb` · `kitty` · `rofi` · `dolphin` · `zsh` · `starship` · `zoxide` · `fzf` · `fd` · `eza` · `bat` · `neovim` · `wf-recorder` · `slurp` · `jq` · `wireplumber` · `pavucontrol` · `dunst` · `godot` · `openssh`
 
 ### AUR (via yay)
 

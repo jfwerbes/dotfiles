@@ -5,7 +5,7 @@
 -- Set programs that you use.
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
-local menu = "wofi --show drun --prompt Launch..."
+local menu = "rofi -show drun"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -17,6 +17,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind("CTRL + RETURN", hl.dsp.layout("swapwithmaster"))
 hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("hyprshot -m region -o '/home/brutus/captures/screenshots'"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("/home/brutus/.dotfiles/scripts/wallpick.py"))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))

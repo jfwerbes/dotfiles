@@ -1,0 +1,70 @@
+/* Wallpaper picker grid, used by scripts/wallpick.py */
+
+configuration {
+    show-icons: true;
+    /* vim navigation; inputbar is hidden so letters never filter */
+    kb-move-char-back: "Control+b";
+    kb-move-char-forward: "Control+f";
+    kb-row-left: "Left,h,Control+Page_Up";
+    kb-row-right: "Right,l,Control+Page_Down";
+    kb-row-up: "Up,k,Control+p";
+    kb-row-down: "Down,j,Control+n";
+    kb-accept-entry: "Return,KP_Enter,space,Control+j,Control+m";
+    kb-cancel: "Escape,q,Control+g,Control+bracketleft";
+}
+
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+    font: "CaskaydiaCove Nerd Font 12";
+}
+
+window {
+    location: center;
+    anchor: center;
+    width: 92%;
+    padding: 16px;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 8px;
+    background-color: @bg;
+}
+
+mainbox {
+    children: [ listview ];
+}
+
+listview {
+    columns: 4;
+    lines: 1;
+    flow: horizontal;
+    fixed-columns: true;
+    scrollbar: false;
+    spacing: 12px;
+    cycle: true;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    spacing: 8px;
+    border-radius: 6px;
+}
+
+element selected {
+    background-color: @selection;
+    text-color: @fg;
+}
+
+element-icon {
+    /* width height: 32:9 so the box hugs the thumbnail */
+    size: 820px 231px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    text-color: inherit;
+}

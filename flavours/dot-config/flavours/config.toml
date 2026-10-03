@@ -49,12 +49,7 @@ file = "~/.dotfiles/kitty/dot-config/kitty/current-theme.conf"
 template = "kitty"
 rewrite = true
 subtemplate = "default"
-
-[[items]]
-file = "~/.dotfiles/wofi/dot-config/wofi/style.css"
-template = "wofi"
-rewrite = true
-subtemplate = "default"
+hook = "kill -SIGUSR1 $(pidof kitty) 2>/dev/null || true"
 
 # [[items]]
 # file = "~/.dotfiles/starship/dot-config/starship.toml"
@@ -73,3 +68,16 @@ file = "~/.dotfiles/cava/dot-config/cava/themes/default.cava"
 template = "cava"
 rewrite = true
 subtemplate = "default"
+hook = "pkill -USR2 cava || true"
+
+[[items]]
+file = "~/.dotfiles/rofi/dot-config/rofi/colors.rasi"
+template = "rofi"
+rewrite = true
+subtemplate = "default"
+
+[[items]]
+file = "~/.dotfiles/rofi/dot-config/rofi/launcher.rasi"
+template = "rofi"
+rewrite = true
+subtemplate = "launcher"

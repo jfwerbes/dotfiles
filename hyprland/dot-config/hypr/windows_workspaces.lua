@@ -39,6 +39,14 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
+-- Blur behind rofi's translucent background, like kitty
+hl.layer_rule({
+	name = "blur-rofi",
+	match = { namespace = "^rofi$" },
+	blur = true,
+	ignore_alpha = 0,
+})
+
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
