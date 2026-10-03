@@ -39,7 +39,7 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
--- Blur behind rofi's translucent background, like kitty
+-- Blur behind rofi's translucent background
 hl.layer_rule({
 	name = "blur-rofi",
 	match = { namespace = "^rofi$" },
