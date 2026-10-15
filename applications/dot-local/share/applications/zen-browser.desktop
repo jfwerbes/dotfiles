@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=zen-browser %U
+Name=zen-browser
+NoDisplay=true
+Type=Application
+MimeType=x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;application/pdf;
