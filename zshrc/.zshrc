@@ -48,6 +48,9 @@ _fzf_compgen_dir() {
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
+# ctrl+backspace deletes previous word
+bindkey '^H' backward-kill-word
+
 # autocompletion using arrow keys (based on history)
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
