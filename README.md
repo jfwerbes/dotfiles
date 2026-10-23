@@ -11,7 +11,7 @@ Personal dotfiles managed with **GNU Stow**, organized so each application lives
 
 ```
 .
-├── applications/dot-local/share/applications/
+├── applications/{dot-config/mimeapps.list,dot-local/share/applications/}
 ├── backgrounds/dot-config/backgrounds/
 ├── dunst/dot-config/dunst/
 ├── flavours/dot-config/flavours/templates/
