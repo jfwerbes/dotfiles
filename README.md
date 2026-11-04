@@ -27,7 +27,7 @@ Personal dotfiles managed with **GNU Stow**, organized so each application lives
 ├── systemd/dot-config/systemd/user/
 ├── waybar/dot-config/waybar/
 ├── yazi/dot-config/yazi/
-└── zshrc/.zshrc
+└── zshrc/{.zshrc,.zshenv}
 ```
 
 Each directory mirrors the final path under `$HOME` (or another target) using the `dot-` prefix so `stow --dotfiles` expands hidden paths correctly.
