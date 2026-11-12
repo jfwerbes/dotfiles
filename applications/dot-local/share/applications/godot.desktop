@@ -4,7 +4,7 @@
 Type=Application
 
 # The version of the desktop entry specification to which this file complies
-Version=4.5
+Version=1.0
 
 # The name of the application
 Name=godot
@@ -25,4 +25,4 @@ Icon=godot
 Terminal=false
 
 # Describes the categories in which this entry should be shown
-Categories=Languages;
+Categories=Development;IDE;
