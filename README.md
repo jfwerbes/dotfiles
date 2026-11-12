@@ -39,7 +39,7 @@ Each directory mirrors the final path under `$HOME` (or another target) using th
 Refer to the [GNU Stow manual](https://www.gnu.org/software/stow/manual/stow.html) for usage details. Notes specific to this repo:
 
 - Always pass `--dotfiles` so `dot-*` paths resolve to hidden files.
-- `greetd` targets the root filesystem; stow it with `sudo stow --dotfiles -t / greetd`.
+- `greetd` targets the root filesystem; stow it with `sudo stow -t / greetd`.
 - Other packages can be stowed from the repo root with `stow --dotfiles <package>`.
 
 ---
