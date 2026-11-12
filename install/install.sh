@@ -4,7 +4,7 @@ set -euo pipefail
 # Update system
 sudo pacman -Syu --noconfirm
 
-# ---- repo packages ----
+# ---- Repo packages ----
 REPO_PKGS=(
   astroterm
   base
@@ -114,7 +114,7 @@ REPO_PKGS=(
 
 sudo pacman -S --needed --noconfirm "${REPO_PKGS[@]}"
 
-# ---- yay bootstrap (only if missing) ----
+# ---- Yay bootstrap (only if missing) ----
 if ! command -v yay >/dev/null 2>&1; then
   tmpdir="$(mktemp -d)"
   git clone --depth 1 https://aur.archlinux.org/yay.git "$tmpdir/yay"

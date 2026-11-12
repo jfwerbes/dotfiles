@@ -1,6 +1,6 @@
 # Interactive shell config. Environment variables and PATH live in ~/.zshenv.
 
-# ---------------- History ----------------
+# ---- History ----
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -9,11 +9,11 @@ setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 
-# ---------------- Completion ----------------
+# ---- Completion ----
 autoload -Uz compinit
 compinit
 
-# ---------------- Keybinds ----------------
+# ---- Keybinds ----
 # Vi mode first: it resets the keymap, so other binds must come after it.
 bindkey -v
 
@@ -28,7 +28,7 @@ bindkey '^H' backward-kill-word
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 
-# ---------------- Aliases ----------------
+# ---- Aliases ----
 # editors
 alias vim='nvim'
 alias vi='nvim'
@@ -48,7 +48,7 @@ alias invoice='~/projects/go/bin/invoice'
 alias gdtouch='~/.dotfiles/scripts/gdtouch.zsh'
 alias screenrecord='wf-recorder -g "$(slurp)" -f "$HOME/captures/videos/$(date +%Y%m%d_%H%M%S).mp4"'
 
-# ---------------- Tools ----------------
+# ---- Tools ----
 eval "$(starship init zsh)"
 
 # zoxide replaces cd
