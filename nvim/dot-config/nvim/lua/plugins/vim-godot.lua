@@ -1,4 +1,4 @@
 return {
-  -- add plenary
+  -- add godot support
   { "habamax/vim-godot" },
 }

@@ -1,12 +1,11 @@
 return {
-  -- add pyright to lspconfig
+  -- configure language servers
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         bashls = {
           filetypes = { "sh", "zsh" },
         },

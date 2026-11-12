@@ -1,4 +1,3 @@
--- .config/nvim/lua/file.lua
 return {
   {
     "mfussenegger/nvim-lint",
