@@ -1,23 +1,15 @@
---------------------------------
----- WINDOWS AND WORKSPACES ----
---------------------------------
+-- ---- Windows and workspaces ----
 
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- Example window rules that are useful
-
-local suppressMaximizeRule = hl.window_rule({
-	-- Ignore maximize requests from all apps. You'll probably like this.
+-- Ignore maximize requests from all apps
+hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
 
 	suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
 
+-- Fix some dragging issues with XWayland
 hl.window_rule({
-	-- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
 	match = {
 		class = "^$",
@@ -31,14 +23,6 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
 -- Blur behind rofi's translucent background
 hl.layer_rule({
 	name = "blur-rofi",
@@ -47,7 +31,7 @@ hl.layer_rule({
 	ignore_alpha = 0,
 })
 
--- Hyprland-run windowrule
+-- Float hyprland-run in the bottom-left corner
 hl.window_rule({
 	name = "move-hyprland-run",
 	match = { class = "hyprland-run" },

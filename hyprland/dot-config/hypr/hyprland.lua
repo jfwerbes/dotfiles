@@ -1,14 +1,9 @@
--- This is an example Hyprland Lua config file.
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
+-- Hyprland entry point; each module configures one area.
+-- Wiki: https://wiki.hypr.land/Configuring/Start/
 
 require("monitors")
 require("autostart")
 require("env")
-require("permissions")
 require("feel")
 require("input")
 require("misc")

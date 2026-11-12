@@ -1,8 +1,6 @@
-------------------
----- MONITORS ----
-------------------
+-- ---- Monitors ----
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- Any output: preferred mode, automatic position and scale
 hl.monitor({
 	output = "",
 	mode = "preferred",
